@@ -39,4 +39,7 @@ func _physics_process(delta):
 
 func flap():
 	velocity.y = FLAP_SPEED
-	$FlapSound.play()   # Play flap sound
+
+	# Restart the sound on every flap
+	$FlapSound.stop()
+	$FlapSound.play()

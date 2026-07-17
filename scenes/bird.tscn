@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dfuofh4nwer0n" path="res://assets/bird1.png" id="2_cjltx"]
 [ext_resource type="Texture2D" uid="uid://533ubvnyvpxe" path="res://assets/bird2.png" id="3_rt77f"]
 [ext_resource type="Texture2D" uid="uid://cb3fw6j2c364v" path="res://assets/bird3.png" id="4_h1qdy"]
-[ext_resource type="AudioStream" path="res://assets/sounds/FlapSound.mp3" id="5_b7mtg"]
+[ext_resource type="AudioStream" uid="uid://k475ajutc52v" path="res://assets/sounds/FlapSound.wav" id="5_b7mtg"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xn4pq"]
 animations = [{
