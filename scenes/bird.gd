@@ -27,19 +27,26 @@ func _physics_process(delta):
 			velocity.y = MAX_VEL
 
 		if flying:
-			rotation = deg_to_rad(velocity.y * 0.05)
+			rotation = clamp(
+				lerp(rotation, deg_to_rad(velocity.y * 0.05), 0.15),
+				deg_to_rad(-30),
+				deg_to_rad(90)
+			)
 			$AnimatedSprite2D.play()
+
 		elif falling:
-			rotation = PI / 2
+			rotation = lerp(rotation, PI / 2, 0.2)
 			$AnimatedSprite2D.stop()
 
 		move_and_collide(velocity * delta)
+
 	else:
 		$AnimatedSprite2D.stop()
 
 func flap():
-	velocity.y = FLAP_SPEED
+	if velocity.y > FLAP_SPEED:
+		velocity.y = FLAP_SPEED
 
-	# Restart the sound on every flap
+	# Restart flap sound
 	$FlapSound.stop()
 	$FlapSound.play()
